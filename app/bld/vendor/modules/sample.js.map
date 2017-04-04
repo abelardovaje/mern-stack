@@ -1,1 +1,1 @@
-{"version":3,"file":"sample.js","sourceRoot":"C:/Users/5200012/Desktop/mern/app/","sources":["vendor/modules/sample.ts"],"names":[],"mappings":";;AAAA;IACC;IAAc,CAAC;IAAA,CAAC;IAChB,uBAAM,GAAN;QACC,OAAO,CAAC,GAAG,CAAC,QAAQ,CAAC,CAAC;IACvB,CAAC;IACF,aAAC;AAAD,CAAC,AALD,IAKC;AALY,wBAAM"}
+{"version":3,"file":"sample.js","sourceRoot":"C:/Users/5200012/Desktop/mern-stack/app/","sources":["vendor/modules/sample.ts"],"names":[],"mappings":";;AAAA;IACC;IAAc,CAAC;IAAA,CAAC;IAChB,uBAAM,GAAN;QACC,OAAO,CAAC,GAAG,CAAC,QAAQ,CAAC,CAAC;IACvB,CAAC;IACF,aAAC;AAAD,CAAC,AALD,IAKC;AALY,wBAAM"}
