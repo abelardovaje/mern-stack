@@ -13,12 +13,12 @@ export class Config{
 	constructor(private app:any){
 		
 		
-		this.static();
+		this.staticPaths();
 		this.middlewares();
 
 	}
 
-	static(){		
+	staticPaths(){		
 
 		console.log(path.join(__dirname, '../resources/assets'));
 		this.app.use("/node_modules", express.static(path.join(__dirname, '../../../node_modules')));
@@ -48,9 +48,6 @@ export class Config{
 
 		});
 
-
 	}
-
-	
 
 }

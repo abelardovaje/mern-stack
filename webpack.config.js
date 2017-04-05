@@ -2,15 +2,15 @@ var webpack = require("webpack");
 module.exports = {
     entry: {
 
-        home:"./app/bld/resources/assets/src/components/home/index.tsx",
-        about:"./app/bld/resources/assets/src/components/about/index.tsx",
-        login:"./app/bld/resources/assets/src/components/login/index.tsx",
+        home:"./app/resources/assets/src/components/home/index.tsx",
+        about:"./app/resources/assets/src/components/about/index.tsx",
+        login:"./app/resources/assets/src/components/login/index.tsx",
 
     },
     output: {      
         filename: "[name].bundle.js",
         chunkFilename: "[id].chunk.js",
-        path: __dirname + "/app/bld/resources/assets/dist"
+        path: __dirname + "/app/resources/assets/dist"
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({

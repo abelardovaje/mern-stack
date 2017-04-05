@@ -11,10 +11,10 @@ var csurf = require("csurf");
 var Config = (function () {
     function Config(app) {
         this.app = app;
-        this.static();
+        this.staticPaths();
         this.middlewares();
     }
-    Config.prototype.static = function () {
+    Config.prototype.staticPaths = function () {
         console.log(path.join(__dirname, '../resources/assets'));
         this.app.use("/node_modules", express.static(path.join(__dirname, '../../../node_modules')));
         this.app.use("/assets", express.static(path.join(__dirname, '../resources/assets')));
