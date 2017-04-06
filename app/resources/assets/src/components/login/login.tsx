@@ -2,23 +2,19 @@ import * as React from 'react';
 import axios,{ AxiosRequestConfig, AxiosPromise } from 'axios';
 
 
-interface ILoginState{
-	username:string;
-	password:string;
-
-}
-
-export class Login extends React.Component<{},ILoginState>{
-
+export class Login extends React.Component<any,any>{
 	constructor(){
 		super();
-		this.state = {username:"",password:""};
+		this.state = {username:"",password:"",output:[]};		
 		this.handleChange = this.handleChange.bind(this);
 		this.login = this.login.bind(this);
+		
 	}
 
 	login(e:any){
 		
+		let $this = this;
+
 		/*
 			Use any http request library
 		*/
@@ -31,6 +27,21 @@ export class Login extends React.Component<{},ILoginState>{
 			}
 		}).then(function(response){
 			console.log(response);
+			
+			let list:string[] = [];
+			for(let entry in response.data){
+				console.log(response.data[entry]);
+				list.push(response.data[entry]);
+			}
+
+			let lists = list.map((val,index)=>
+				<li key={index}>{val}</li>);
+			
+			$this.setState({
+				sample:lists
+			});
+
+			
 		});
 
 		// window.location.assign('/home');
@@ -54,6 +65,12 @@ export class Login extends React.Component<{},ILoginState>{
 					<input type="password" name="password"value={this.state.password} onChange={this.handleChange} placeholder="password"/><br/>
 					<button>Login</button>
 				</form>
+				<h2>Output</h2>
+				<div>
+				<ul>
+				{this.state.sample}
+				</ul>
+				</div>
 			</div>
 		);
 	}

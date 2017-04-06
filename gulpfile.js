@@ -5,15 +5,21 @@ var watch = require('gulp-watch');
 var clean = require('gulp-clean');
 var livereload = require('gulp-livereload');
 
-// gulp.task('less', function() {
-//   // place code for your default task here
-//     return gulp.src('./less/**/*.less')
-// 	    .pipe(less({
-// 	      paths: [ path.join(__dirname, 'less', 'includes') ]
-// 	    }))
-// 	    .pipe(gulp.dest('./public/css'))
-// 	    .pipe(livereload());
-// });
+
+gulp.task('clean-less',function(){
+  return gulp.src('app/bld/public/css/*',{read:false})
+      .pipe(clean());
+})
+
+gulp.task('less',['clean-less'],function() {
+  // place code for your default task here
+    return gulp.src('app/resources/assets/less/*.less')
+	    .pipe(less({
+	      paths: [ path.join(__dirname, 'app/resources/assets/less', 'includes') ]
+	    }))
+	    .pipe(gulp.dest('app/bld/public/css'))
+	    .pipe(livereload());
+});
 
 gulp.task('clean-views',function(){
 	return gulp.src('app/bld/resources/views/*',{read:false})
@@ -41,8 +47,9 @@ gulp.task('watch', function() {
    //gulp.watch('./less/**/*.less', ['less']);  // Watch all the .less files, then run the less task
     gulp.watch('app/resources/views/*', ['default']);
     gulp.watch('app/resources/assets/dist/*', ['default']);
+    gulp.watch('app/resources/assets/less/*.less', ['default']);
 });
 
 
-gulp.task('default', ['resources','assets']); // Default will run the 'entry' watch task
+gulp.task('default', ['resources','assets','less']); // Default will run the 'entry' watch task
 

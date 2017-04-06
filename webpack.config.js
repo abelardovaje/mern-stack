@@ -5,6 +5,7 @@ module.exports = {
         home:"./app/resources/assets/src/components/home/index.tsx",
         about:"./app/resources/assets/src/components/about/index.tsx",
         login:"./app/resources/assets/src/components/login/index.tsx",
+        sample:"./app/resources/assets/src/components/sample/index.tsx",
 
     },
     output: {      

@@ -14,6 +14,7 @@ var UserController = (function () {
     };
     UserController.prototype.login = function (req, res) {
         console.log(req.body);
+        res.json(req.body);
     };
     return UserController;
 }());

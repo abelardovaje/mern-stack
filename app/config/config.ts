@@ -20,15 +20,16 @@ export class Config{
 
 	staticPaths(){		
 
-		console.log(path.join(__dirname, '../resources/assets'));
+		console.log(path.join(__dirname, '../public'));
 		this.app.use("/node_modules", express.static(path.join(__dirname, '../../../node_modules')));
 		this.app.use("/assets", express.static(path.join(__dirname, '../resources/assets')));
 		this.app.use("/dist", express.static(path.join(__dirname, '../resources/assets/dist')));
+		this.app.use("/public", express.static(path.join(__dirname, '../public')));
 
 	}
 
 	middlewares(){
-		console.log('middleware loaded');
+		
 		this.app.use(cookieParser());
 		this.app.use(csurf({cookie:true}));
 		this.app.use(helmet());
