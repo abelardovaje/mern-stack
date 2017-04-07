@@ -1,3 +1,78 @@
 body{
-	color:blue;
+	
+}
+
+#app{
+	.header{
+		border-bottom:1px solid #ddd;
+		padding:5px;
+		ul{
+			position: relative;
+			top:4px;
+			li{
+				display: inline-block;
+				padding:5px;
+			}
+		}
+	}
+
+	.home-container{
+		
+		height:200px;
+
+		.form-container{
+			// border:1px solid red;
+			padding:5px;
+		}
+
+		.chat-container{
+			// border:1px solid red;
+			padding:5px;
+
+			.row{
+				margin:0px;
+				> div{
+					padding:0px;
+					border:1px solid #ddd;
+					height:500px;
+					&:nth-child(1){
+						border-right:0px;
+						.title{
+							padding:5px;background:whitesmoke;
+							border-bottom:1px solid #ddd;
+						}
+
+						.user-list{
+							ul{
+								list-style: none;
+								margin:0px;
+								padding:0px;
+								li{
+									display: block;
+									border-bottom:1px solid #ddd;
+									padding:5px;
+								}
+							}
+						}
+					}
+
+					&:nth-child(2){
+						padding:5px;
+						.chat-timeline{
+							height:400px;
+							border:1px solid #ddd;
+							border-bottom:0px;
+							background:whitesmoke;
+						}
+
+						.chat-message-box{
+							height:90px;border:1px solid #ddd;
+						}
+					}
+				}
+			}
+		}
+
+
+	}
 }

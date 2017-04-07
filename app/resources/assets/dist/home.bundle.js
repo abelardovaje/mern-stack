@@ -1,18 +1,13 @@
-webpackJsonp([1],[
-/* 0 */
+webpackJsonp([1],{
+
+/***/ 0:
 /***/ (function(module, exports) {
 
 module.exports = React;
 
 /***/ }),
-/* 1 */,
-/* 2 */
-/***/ (function(module, exports) {
 
-module.exports = ReactDOM;
-
-/***/ }),
-/* 3 */
+/***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29,21 +24,138 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var React = __webpack_require__(0);
-var Footer = (function (_super) {
-    __extends(Footer, _super);
-    function Footer() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var header_1 = __webpack_require__(3);
+var form_1 = __webpack_require__(15);
+var chat_1 = __webpack_require__(39);
+var Home = (function (_super) {
+    __extends(Home, _super);
+    function Home() {
+        var _this = _super.call(this) || this;
+        _this.state = {
+            name: "",
+            age: 0,
+            contacts: [{
+                    name: 'abel',
+                    age: 29,
+                    id: 1
+                }]
+        };
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.addContact = _this.addContact.bind(_this);
+        return _this;
     }
-    Footer.prototype.render = function () {
-        return (React.createElement("div", null, "Footer"));
+    Home.prototype.loadContacts = function () {
+        var lists = this.state.contacts.map(function (list, key) {
+            return React.createElement("tr", { key: key },
+                React.createElement("td", null, list.id),
+                React.createElement("td", null, list.name),
+                React.createElement("td", null, list.age),
+                React.createElement("td", null,
+                    React.createElement("button", { className: "btn btn-primary" }, "Edit")));
+        });
+        return lists;
     };
-    return Footer;
+    Home.prototype.homeService = function () {
+        return {};
+    };
+    Home.prototype.handleChange = function (e) {
+        this.setState((_a = {},
+            _a[e.target.name] = e.target.value,
+            _a));
+        var _a;
+    };
+    Home.prototype.addContact = function () {
+        var contacts = this.state.contacts;
+        contacts.push({
+            name: this.state.name,
+            age: this.state.age
+        });
+        this.setState({
+            contacts: contacts
+        });
+    };
+    Home.prototype.render = function () {
+        return (React.createElement("div", null,
+            React.createElement(header_1.Header, null),
+            React.createElement("div", { className: "container home-container" },
+                React.createElement(form_1.Form, null),
+                React.createElement(chat_1.Chat, null))));
+    };
+    return Home;
 }(React.Component));
-exports.Footer = Footer;
+exports.Home = Home;
 
 
 /***/ }),
-/* 4 */
+
+/***/ 15:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+exports.__esModule = true;
+var React = __webpack_require__(0);
+var Form = (function (_super) {
+    __extends(Form, _super);
+    function Form() {
+        var _this = _super.call(this) || this;
+        _this.login = _this.login.bind(_this);
+        _this.handleChange = _this.handleChange.bind(_this);
+        return _this;
+    }
+    Form.prototype.componentDidMount = function () {
+        console.log(this.props.contacts);
+    };
+    Form.prototype.handleChange = function (e) {
+        this.props.formHandleChange(e);
+    };
+    Form.prototype.login = function (e) {
+    };
+    Form.prototype.render = function () {
+        return (React.createElement("div", { className: "form-container" },
+            React.createElement("form", { onSubmit: this.login, method: "post" },
+                React.createElement("input", { type: "text", name: "username", placeholder: "username", onChange: this.handleChange }),
+                React.createElement("button", null, "Login"))));
+    };
+    return Form;
+}(React.Component));
+exports.Form = Form;
+
+
+/***/ }),
+
+/***/ 16:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var React = __webpack_require__(0);
+var ReactDom = __webpack_require__(2);
+var home_1 = __webpack_require__(12);
+ReactDom.render(React.createElement(home_1.Home, null), document.getElementById('app'));
+
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = ReactDOM;
+
+/***/ }),
+
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83,15 +195,8 @@ exports.Header = Header;
 
 
 /***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */
+
+/***/ 39:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -108,39 +213,32 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var React = __webpack_require__(0);
-var header_1 = __webpack_require__(4);
-var footer_1 = __webpack_require__(3);
-var Home = (function (_super) {
-    __extends(Home, _super);
-    function Home() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var Chat = (function (_super) {
+    __extends(Chat, _super);
+    function Chat() {
+        return _super.call(this) || this;
     }
-    Home.prototype.render = function () {
-        return (React.createElement("div", null,
-            React.createElement(header_1.Header, null),
-            "Home",
-            React.createElement(footer_1.Footer, null)));
+    Chat.prototype.render = function () {
+        return (React.createElement("div", { className: "chat-container" },
+            React.createElement("div", { className: "row" },
+                React.createElement("div", { className: "col-lg-2" },
+                    React.createElement("div", { className: "title" }, "Online"),
+                    React.createElement("div", { className: "user-list" },
+                        React.createElement("ul", null,
+                            React.createElement("li", null, "User")))),
+                React.createElement("div", { className: "col-lg-10" },
+                    React.createElement("div", { className: "chat-timeline" }),
+                    React.createElement("div", { className: "chat-message-box" },
+                        React.createElement("div", { className: "col-lg-10 input-message" },
+                            React.createElement("input", { type: "text", placeholder: "Write here..." })),
+                        React.createElement("div", { className: "col-lg-2 send-message" }))))));
     };
-    return Home;
+    return Chat;
 }(React.Component));
-exports.Home = Home;
-
-
-/***/ }),
-/* 14 */,
-/* 15 */,
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.__esModule = true;
-var React = __webpack_require__(0);
-var ReactDom = __webpack_require__(2);
-var home_1 = __webpack_require__(13);
-ReactDom.render(React.createElement(home_1.Home, null), document.getElementById('app'));
+exports.Chat = Chat;
 
 
 /***/ })
-],[16]);
+
+},[16]);
 //# sourceMappingURL=home.bundle.js.map

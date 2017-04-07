@@ -29,37 +29,6 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var React = __webpack_require__(0);
-var Footer = (function (_super) {
-    __extends(Footer, _super);
-    function Footer() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Footer.prototype.render = function () {
-        return (React.createElement("div", null, "Footer"));
-    };
-    return Footer;
-}(React.Component));
-exports.Footer = Footer;
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-exports.__esModule = true;
-var React = __webpack_require__(0);
 var Header = (function (_super) {
     __extends(Header, _super);
     function Header() {
@@ -83,14 +52,14 @@ exports.Header = Header;
 
 
 /***/ }),
+/* 4 */,
 /* 5 */,
 /* 6 */,
 /* 7 */,
 /* 8 */,
 /* 9 */,
 /* 10 */,
-/* 11 */,
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -107,8 +76,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var React = __webpack_require__(0);
-var header_1 = __webpack_require__(4);
-var footer_1 = __webpack_require__(3);
+var header_1 = __webpack_require__(3);
+var footer_1 = __webpack_require__(17);
 var About = (function (_super) {
     __extends(About, _super);
     function About() {
@@ -126,9 +95,9 @@ exports.About = About;
 
 
 /***/ }),
+/* 12 */,
 /* 13 */,
-/* 14 */,
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -136,10 +105,43 @@ exports.About = About;
 exports.__esModule = true;
 var React = __webpack_require__(0);
 var ReactDom = __webpack_require__(2);
-var about_1 = __webpack_require__(12);
+var about_1 = __webpack_require__(11);
 ReactDom.render(React.createElement(about_1.About, null), document.getElementById('app'));
 
 
+/***/ }),
+/* 15 */,
+/* 16 */,
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+exports.__esModule = true;
+var React = __webpack_require__(0);
+var Footer = (function (_super) {
+    __extends(Footer, _super);
+    function Footer() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Footer.prototype.render = function () {
+        return (React.createElement("div", null, "Footer"));
+    };
+    return Footer;
+}(React.Component));
+exports.Footer = Footer;
+
+
 /***/ })
-],[15]);
+],[14]);
 //# sourceMappingURL=about.bundle.js.map
