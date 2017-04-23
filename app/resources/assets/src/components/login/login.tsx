@@ -1,7 +1,6 @@
 import * as React from 'react';
 import axios,{ AxiosRequestConfig, AxiosPromise } from 'axios';
 
-
 export class Login extends React.Component<any,any>{
 	constructor(){
 		super();
@@ -71,6 +70,7 @@ export class Login extends React.Component<any,any>{
 				{this.state.sample}
 				</ul>
 				</div>
+
 			</div>
 		);
 	}

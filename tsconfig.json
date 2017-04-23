@@ -18,5 +18,9 @@
         "bld",      
         "node_modules",
         "app/resources/assets/src/**/*"
-    ]
+    ],
+     "typeRoots": [
+            "../node_modules/@types",
+            "../@types"
+        ]
 }

@@ -4,16 +4,18 @@
   "description": "typescript+express",
   "main": "index.js",
   "scripts": {
-    "start":"node app/bld/server",
+    "start": "node app/bld/server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"webpack -w"
+    "build": "webpack -w"
   },
   "author": "Abel",
   "license": "ISC",
   "dependencies": {
     "@types/react": "^15.0.20",
     "@types/react-dom": "^0.14.23",
-    "axios": "^0.16.0",
+    "@types/react-redux": "^4.4.39",
+    "@types/redux": "^3.6.0",
+    "axios": "^0.16.1",
     "body-parser": "^1.17.1",
     "consolidate": "^0.14.5",
     "cookie-parser": "^1.4.3",
@@ -31,13 +33,19 @@
     "path": "^0.12.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.1",
+    "redux-promise-middleware": "^4.2.0",
+    "redux-thunk": "^2.2.0",
     "ts-loader": "^2.0.3",
     "vio": "^0.2.1",
-    "webpack": "^2.3.3"
+    "webpack": "^2.4.1"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.1.2",
     "gulp-clean": "^0.3.2",
+    "redux-devtools": "^3.3.2",
     "source-map-loader": "^0.2.1",
     "typescript": "^2.2.2"
   },
